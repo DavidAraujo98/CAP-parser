@@ -1,4 +1,4 @@
-package CAPParser
+package cap
 
 import (
 	"encoding/xml"

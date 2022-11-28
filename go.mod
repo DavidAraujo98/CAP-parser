@@ -1,3 +1,3 @@
-module github.com/DavidAraujo98/CAPParser
+module github.com/DavidAraujo98/cap-parser
 
 go 1.19

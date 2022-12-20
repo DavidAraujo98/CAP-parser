@@ -13,19 +13,19 @@ func readFileToCAP(filePath string) []byte{
         fmt.Println(err)
     }
     defer xmlFile.Close()
-    byteValue, _ := ioutil.ReadAll(xmlFile)
-    return byteValue
+    rawData, _ := ioutil.ReadAll(xmlFile)
+    return rawData
 }
 
-func writeCAPToFile(byteValue []byte, filePath string) { 
-    ioutil.WriteFile(filePath, byteValue, 0664)
+func writeCAPToFile(rawData []byte, filePath string) { 
+    ioutil.WriteFile(filePath, rawData, 0664)
 }
 
-func Parser(byteValue []byte, alertType *Alert) {
-    xml.Unmarshal(byteValue, &alertType)
+func Parser(rawData []byte, alertType *Alert) {
+    xml.Unmarshal(rawData, &alertType)
 }
 
 func Deparser(alertType Alert) []byte{
-    byteValue, _ := xml.Marshal(alertType) 
-    return byteValue
+    rawData, _ := xml.Marshal(alertType) 
+    return rawData
 }

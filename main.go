@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func readFileToCAP(filePath string) []byte{
+func ReadFileToCAP(filePath string) []byte{
     xmlFile, err := os.Open(filePath)
     if err != nil {
         fmt.Println(err)
@@ -17,7 +17,7 @@ func readFileToCAP(filePath string) []byte{
     return rawData
 }
 
-func writeCAPToFile(rawData []byte, filePath string) { 
+func WriteCAPToFile(rawData []byte, filePath string) { 
     ioutil.WriteFile(filePath, rawData, 0664)
 }
 
